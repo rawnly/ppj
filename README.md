@@ -8,7 +8,7 @@ runs natively thanks to [PKG](https://github.com/vercel/pkg)
 
 ## Usage
 ```sh
-	cat package.json | pp
+	cat package.json | ppj
 ```
 
 ## Installation
