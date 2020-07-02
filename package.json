@@ -1,6 +1,6 @@
 {
   "name": "ppj",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pretty print JSON`",
   "main": "src/index.js",
   "scripts": {
