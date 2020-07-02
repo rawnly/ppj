@@ -19,5 +19,7 @@ Download the latest release and move it into your `$PATH`
 	yarn global add ppj
 ```
 
---- 
+---
+<p align='center'>
 Made with a :keyboard: in :it:
+</p>
