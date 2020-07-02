@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  create_tag:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      
+      # Create a new tag when package.json is changed
+    - uses: butlerlogic/action-autotag@stable
+      with:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        tag_prefix: v
+        strategy: package
