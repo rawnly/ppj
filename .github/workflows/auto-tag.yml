@@ -16,8 +16,21 @@ jobs:
     - uses: actions/checkout@v2
       
       # Create a new tag when package.json is changed
-    - uses: butlerlogic/action-autotag@stable
+    - name: Tag
+      id: create_tag
+      uses: butlerlogic/action-autotag@stable
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         tag_prefix: v
         strategy: package
+        
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
