@@ -1,6 +1,6 @@
 {
   "name": "ppj",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Pretty print JSON`",
 
   "author": "Federico Vitale (hi@fedevitale.dev) <https://fedevitale.dev>",
@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "scripts": {
     "prebuild": "babel src -d build --extensions '.ts,.js'",
-    "build": "pkg src/index.js -o=dist/ppj",
+    "build": "pkg build/index.js -o=dist/ppj",
     "postbuild": "rimraf build"
   },
   "bin": {
