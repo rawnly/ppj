@@ -1,6 +1,6 @@
 {
   "name": "ppj",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Pretty print JSON`",
 
   "author": "Federico Vitale (hi@fedevitale.dev) <https://fedevitale.dev>",
@@ -12,7 +12,8 @@
     "postbuild": "rimraf build"
   },
   "bin": {
-    "ppj": "./src/index.js"
+		"pretty-print": "./dist/ppj",
+    "ppj": "./dist/ppj"
   },
   "keywords": [
     "json",
