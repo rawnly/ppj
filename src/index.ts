@@ -1,8 +1,8 @@
-const { prettyPrint, noArgsError } = require('./utils');
- 
+import { prettyPrint, noArgsError } from './utils';
+
 (() => {
-	var json = "";
-	
+	let json: string = "";
+
 	if ( process.stdin.isTTY ) {
 		const args = process.argv.slice(2);
 
@@ -22,7 +22,7 @@ const { prettyPrint, noArgsError } = require('./utils');
 		json += chunk
 	);
 
-	stdin.on('end', () => 
+	stdin.on('end', () =>
 		prettyPrint(json)
 	);
 })()

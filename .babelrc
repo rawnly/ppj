@@ -1,0 +1,14 @@
+{
+  "presets": ["@babel/preset-typescript", "@babel/preset-env"],
+  "plugins": [
+    ["transform-inline-environment-variables", {
+      "include": ["BUILD_SECRET"]
+    }],
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "@utils": "./src/utils"
+      }
+    }]
+  ]
+}

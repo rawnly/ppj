@@ -1,20 +1,22 @@
-const chalk = require('chalk');
+import chalk from 'chalk'
 
-/**
- * @name highlightJSON
- * @description Highlight json
- * @param {Object} data
- * @param {Object} options
- */
-const highlightJSON =  (data, { 
-    brackets = 'dim', 
-    strings = 'green', 
-    digits = 'cyan', 
+interface HighlightOptions {
+    brackets?: string;
+    strings?: string;
+    digits?: string;
+    falsy?: string;
+    boolean?: string;
+}
+
+const highlightJSON =  (data: any, {
+    brackets = 'dim',
+    strings = 'green',
+    digits = 'cyan',
     falsy = 'dim',
-    boolean = 'magenta', 
-} = {}) => {
+    boolean = 'magenta',
+}: HighlightOptions = {}) => {
     // TODO: Find a regex that matches the key of the json
-    
+
     let jsonString = JSON.stringify(data, null, 2);
 
     jsonString = jsonString.replace(/[\{|\}|\,|\:|\[|\]]+/g, chalk`{${brackets} $&}`);
@@ -26,21 +28,15 @@ const highlightJSON =  (data, {
     return jsonString;
 }
 
-/**
- * @param {String} json 
- */
-module.exports.prettyPrint = function prettyPrint(json) {
+// pretty print data
+export const prettyPrint = (json: string) => {
     try {
-        const data = JSON.parse(json)
-
-        console.log( highlightJSON(data) );
+        console.log( highlightJSON(JSON.parse(json)) );
     } catch (error) {
         console.error(chalk`{red {bold Invalid JSON}}`);
         console.log();
     }
 }
 
-/**
- * Handle no arguments error
- */
-module.exports.noArgsError = () => console.error(chalk`{bold {red ERROR! No enought arguments!}}`)
+// no args error
+export const noArgsError = () => console.error(chalk`{bold {red ERROR! No enought arguments!}}`)
