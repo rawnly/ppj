@@ -1,11 +1,15 @@
 {
   "name": "ppj",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pretty print JSON`",
+
+  "author": "Federico Vitale (hi@fedevitale.dev) <https://fedevitale.dev>",
+  "license": "MIT",
   "main": "src/index.js",
   "scripts": {
+    "prebuild": "babel src -d build --extensions '.ts,.js'",
     "build": "pkg src/index.js -o=dist/ppj",
-    "build.all": "pkg src/index.js --out-path=dist/ppj"
+    "postbuild": "rimraf build"
   },
   "bin": {
     "ppj": "./src/index.js"
@@ -15,12 +19,20 @@
     "prettyPrint",
     "parser"
   ],
-  "author": "Federico Vitale (fedevitale99@gmail.com) <https://fedevitale.dev>",
-  "license": "MIT",
-  "devDependencies": {
-    "pkg": "^4.4.9"
-  },
   "dependencies": {
     "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/node": "^14.14.7",
+    "babel-loader": "^8.2.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "pkg": "^4.4.9",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.0.5"
   }
 }
