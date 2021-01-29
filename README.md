@@ -2,9 +2,10 @@
 > Easily beautify JSON in your terminal.
 
 ## Why?
-I was used to use [json_pp](https://github.com/deftek/json_pp) but since I don't use PHP anymore
-I don't want to install composer on my computers. So here we are, PPJ is a simple JSON pretty printer in NodeJs that 
-runs natively thanks to [PKG](https://github.com/vercel/pkg)
+I was used to use [json_pp](https://github.com/deftek/json_pp), but since I don't have PHP installed anymore
+and I don't want to install composer on my machines I made this little cli.
+
+PPJ is a simple JSON pretty printer in NodeJs that runs natively thanks to [PKG](https://github.com/vercel/pkg)
 
 ## Usage
 ```sh
